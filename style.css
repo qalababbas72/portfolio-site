@@ -1,0 +1,313 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary-color: #38bdf8;
+    --accent-color: #818cf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar styling */
+header {
+    background-color: rgba(15, 23, 42, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #334155;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Sections Base Layout */
+section {
+    padding: 6rem 2rem 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Section & Entry Animations */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-content h2 {
+    color: var(--text-muted);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+/* Social Links Hover Animation */
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-right: 1.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Animated Gradient Button */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color), var(--primary-color));
+    background-size: 200% auto;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-position: right center;
+    transform: scale(1.03);
+}
+
+/* Skills Cards layout */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-category:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Project & Cert Grid with Dynamic Hover Lift */
+.projects-grid, .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card, .cert-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smooth pop and glow effect on hover */
+.project-card:hover, .cert-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+}
+
+.project-meta {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.project-card ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.project-card ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.project-card ul li i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.project-tech {
+    background: #0f172a;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    display: inline-block;
+    width: max-content;
+    margin-bottom: 1rem;
+    border: 1px solid #334155;
+}
+
+.project-link, .cert-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover, .cert-btn:hover {
+    color: var(--accent-color);
+}
+
+.cred-id {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #334155;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ✨ CSS KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   📱 RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Can be handled via a mobile menu icon if needed later */
+    }
+
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 5rem 1.5rem 3rem 1.5rem;
+    }
+
+    .projects-grid, .certs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card:hover, .cert-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
